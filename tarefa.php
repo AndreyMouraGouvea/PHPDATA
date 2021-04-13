@@ -23,7 +23,7 @@
         if($_GET){
             $nome = $_GET['nome'];
             $date = $_GET['nasc'];    //formato Ano/Mes/Dia
-            echo "Seu nome é $nome, você tem ".calcularIdade($date)." anos," .calcularMes($date)." meses,";
+            echo "Seu nome é $nome, você tem ".calcularIdade($date)." anos.";
             
         }
         function calcularIdade($date){
@@ -47,14 +47,14 @@
             }
             return $year_diff;
         }
-        function calcularMes($date){
-            $total_mes = strtotime(date('m')) - strtotime($date('m'));
-            date('m', $total_mes);
-            if ($total_mes > date) {
-                $total_mes = strtotime($date('m')) - strtotime(date('m'));
-            }
-            return $total_mes;
-        }
+        // function calcularMes($date){
+        //     $total_mes = strtotime(date('m')) - strtotime($date('m'));
+        //     date('m', $total_mes);
+        //     if ($total_mes > date) {
+        //         $total_mes = strtotime($date('m')) - strtotime(date('m'));
+        //     }
+        //     return $total_mes;
+        // }
          
     
         
