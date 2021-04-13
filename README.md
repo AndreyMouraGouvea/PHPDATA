@@ -1,8 +1,8 @@
 # Trabalhando com Datas em PHP!
 
-### Em index.php e tarefa.php é desenvolvido o que foi solicitado, que é mostrar o nome, e a sua idade contendo anos, meses, dias e horas.
+### => Em index.php e tarefa.php é desenvolvido o que foi solicitado, que é mostrar o nome, e a sua idade contendo anos, meses, dias e horas.
 
-### Em get.php e date.php nós temos outros exemplos de como usar o date() do php
+### => Em get.php e date.php nós temos outros exemplos de como usar o date() do php
 
 ### Colocar formatação de caracteres na página PHP
 
@@ -10,7 +10,7 @@
 ini_set('default_charset', 'utf-8');
 ```
 
-### Usado para captuar o fuso horário de SP, disponível em php.net as demais localidades
+### Usado para capturar o fuso horário de SP, disponível em php.net as demais localidades
 
 ```
 date_default_timezone_set('America/Sao_Paulo'); 
