@@ -23,7 +23,7 @@
         if($_GET){
             $nome = $_GET['nome'];
             $date = $_GET['nasc'];    //formato Ano/Mes/Dia
-            echo "Seu nome é $nome, você tem ".calcularIdade($date)." anos.";
+            echo "Seu nome é $nome, você tem ".calcularIdade($date)." anos, ".calcularMes($date). " meses, ".calcularDia($date). " dias.";
             
         }
         function calcularIdade($date){
@@ -47,13 +47,51 @@
             }
             return $year_diff;
         }
-        // function calcularMes($date){
-        //     $total_mes = strtotime(date('m')) - strtotime($date('m'));
-        //     date('m', $total_mes);
-        //     if ($total_mes > date) {
-        //         $total_mes = strtotime($date('m')) - strtotime(date('m'));
+        function calcularMes($date){
+            $date = strtotime($_GET['nasc']);
+            $mesNasc = date('m',$date);
+            $mesAtual = date('m');
+            $total_mes = 0;
+
+            if($mesAtual > $mesNasc){
+                $total_mes = $mesAtual - $mesNasc;
+            } else if($mesAtual < $mesNasc){
+                $total_mes = 12 - ($mesNasc - $mesAtual);
+            }
+
+            return $total_mes;
+        }
+        function calcularDia($date){
+            $date = strtotime($_GET['nasc']);
+            $diaNasc = date('d', $date);
+            $diaAtual = date('d');
+            $total_dia = 0;
+
+            if($diaAtual > $diaNasc){
+                $total_dia = $diaAtual - $diaNasc;
+            } else if($diaAtual < $diaNasc == 30){
+                $total_dia = 30 - ($diaNasc - $diaAtual);
+            } else if($diaAtual < $diaNasc == 31){
+                $total_dia = 31 - ($diaNasc - $diaAtual);
+            } else if($diaAtual < $diaNasc == 29){
+                $total_dia = 29 - ($diaNasc - $diaAtual);
+            } else if($diaAtual < $diaNasc == 28){
+                $total_dia = 28 - ($diaNasc - $diaAtual);
+            } 
+
+            return $total_dia;
+        }
+        // function calcularHora($date){
+        //     $date = strtotime($_GET['nasc']);
+        //     $horaNasc = date('H', $date);
+        //     $horaAtual = date('H');
+        //     $total_hora = 0;
+
+        //     if($horaAtual > $horaNasc){
+        //         $total_hora = $horaAtual - $horaNasc;
+        //     } else if($horaAtual < $horaNasc){
+        //         $total_dia = 
         //     }
-        //     return $total_mes;
         // }
          
     
